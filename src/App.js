@@ -1,27 +1,48 @@
-import React from "react";
+import React, {Component} from "react";
 
+class Equipe extends Component{
+    render(){
+        return(
+            <div>
+                <Sobre 
+                nome={this.props.nome}
+                idade={this.props.idade}
+                cargo={this.props.cargo}/>
+                
+                <hr/>
 
-const Equipe = (props) =>{
-    return (
-        <div>
-            <Sobre nome={props.nome}
-             idade= {props.idade}
-             cargo= {props.cargo}
-             />
-        </div>
-    )
-
+            </div>
+        )
+       
+    }
 }
 
-const Sobre = (props) => <h2>Funcionario: {props.nome} Idade: {props.idade} Cargo: {props.cargo}</h2>
+class Sobre extends Component{
+    render(){
+        return(
+            <div>
+                <h2>Nome: {this.props.nome}
+                   
+                     </h2>
+                     <h3>Cargo: {this.props.cargo}</h3>
+                     <h3>idade: {this.props.idade}</h3>
+            </div>
+        )
+       
+    }
+}
 
-function App(){
+
+
+function App() {
     return(
         <div>
-            <Equipe nome= 'Matias' idade= '29' cargo= 'Fullstack'/>
-            <h1>Olá mundo!</h1>
+            <h1>Conheça nossa equipe: </h1>
+            <Equipe nome= 'Matias'cargo='Programador' idade= '29'/>
+            <Equipe nome= 'Edson'cargo='Programador' idade= '33'/>
         </div>
-    ) 
+    )
 }
+
 
 export default App;
