@@ -1,12 +1,24 @@
 import React from "react";
 
 
-const Bemvindo = (props) => <h2>Bem-vindo {props.nome}</h2>
+const Equipe = (props) =>{
+    return (
+        <div>
+            <Sobre nome={props.nome}
+             idade= {props.idade}
+             cargo= {props.cargo}
+             />
+        </div>
+    )
+
+}
+
+const Sobre = (props) => <h2>Funcionario: {props.nome} Idade: {props.idade} Cargo: {props.cargo}</h2>
 
 function App(){
     return(
         <div>
-            <Bemvindo nome= 'Matias'/>
+            <Equipe nome= 'Matias' idade= '29' cargo= 'Fullstack'/>
             <h1>Olá mundo!</h1>
         </div>
     ) 
